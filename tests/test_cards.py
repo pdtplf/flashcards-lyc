@@ -40,6 +40,7 @@ Back: Test Back 1
 Tag: tag_text_1
 Sucessful guesses: 0
 Failed guesses: 0
+Current streak: 0
 -----------------------------------
 ID: 2
 Front: Test Front 2
@@ -47,6 +48,7 @@ Back: Test Back 2
 Tag: tag_text_2
 Sucessful guesses: 0
 Failed guesses: 0
+Current streak: 0
 -----------------------------------"""
         # display all cards
         result = subprocess.run(["./fcard", "list", "-a"], capture_output=True, text=True)
@@ -97,6 +99,7 @@ Back: Test Back 1
 Tag: tag_text_1
 Sucessful guesses: 0
 Failed guesses: 0
+Current streak: 0
 -----------------------------------"""
 
         self.assertEqual(result.returncode, 0)  # убеждаемся что программа завершается без ошибки
@@ -124,6 +127,7 @@ Back: Test Back 1
 Tag: tag_text_1
 Sucessful guesses: 0
 Failed guesses: 0
+Current streak: 0
 -----------------------------------"""
 
         self.assertEqual(result.stdout.strip(), expected_output) # проверяем вывод
@@ -156,4 +160,3 @@ def clear_csv(file_path):
 
 if __name__ == "__main__":
     unittest.main()
-
